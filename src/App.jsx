@@ -1,3 +1,4 @@
+// Fully Updated Task Tracker App with consistent Dark Mode support
 import React, { useState, useEffect } from "react";
 import Login from "./components/Login";
 import TaskForm from "./components/TaskForm";
@@ -8,14 +9,18 @@ import {
   saveTasks,
   loadUsername,
   saveUsername,
+  loadDarkMode,
+  saveDarkMode,
 } from "./utils/localStorage";
-import { LogOut } from "lucide-react";
+import { LogOut, Sun, Moon } from "lucide-react";
 
 function App() {
   const [username, setUsername] = useState(loadUsername());
   const [tasks, setTasks] = useState(loadTasks());
   const [filter, setFilter] = useState("all");
   const [editingTask, setEditingTask] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [darkMode, setDarkMode] = useState(loadDarkMode());
 
   useEffect(() => saveTasks(tasks), [tasks]);
 
@@ -38,6 +43,9 @@ function App() {
         id: Date.now(),
         title: data.title,
         description: data.description,
+        priority: data.priority,
+        dueDate: data.dueDate,
+        tags: data.tags,
         completed: false,
         createdAt: new Date().toISOString(),
       };
@@ -64,33 +72,89 @@ function App() {
     completed: tasks.filter((t) => t.completed).length,
     pending: tasks.filter((t) => !t.completed).length,
   };
-  const visibleTasks =
-    filter === "all"
-      ? tasks
-      : tasks.filter((t) =>
-          filter === "completed" ? t.completed : !t.completed
-        );
+
+  const visibleTasks = tasks.filter((t) => {
+    const matchesFilter =
+      filter === "all"
+        ? true
+        : filter === "completed"
+        ? t.completed
+        : !t.completed;
+    const matchesSearch =
+      t.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      t.description?.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesFilter && matchesSearch;
+  });
 
   if (!username) return <Login onLogin={handleLogin} />;
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <header className="flex flex-col md:flex-row items-center justify-between mb-6">
-        <h1 className="text-3xl font-bold text-gray-800">{username}'s Tasks</h1>
-        <button
-          onClick={handleLogout}
-          className="flex items-center gap-2 mt-4 md:mt-0 px-4 py-2 bg-white text-black border border-black rounded-lg hover:bg-gray-100 transition"
-        >
-          <LogOut size={18} /> Logout
-        </button>
+    <div
+      className={`min-h-screen p-6 transition-all duration-300 ${
+        darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
+      }`}
+    >
+      <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
+        <h1 className="text-2xl sm:text-3xl font-bold text-center md:text-left">
+          {username}'s Tasks
+        </h1>
+
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="🔍 Search tasks..."
+          className={`w-full md:w-96 px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-400 transition ${
+            darkMode
+              ? "bg-gray-800 text-white border-white hover:bg-gray-700"
+              : "bg-white text-black border-black hover:bg-gray-100"
+          }`}
+        />
+
+        <div className="flex gap-3 self-center md:self-auto">
+          <button
+            onClick={() => {
+              setDarkMode(!darkMode);
+              saveDarkMode(!darkMode);
+            }}
+            className={`p-2 border rounded-lg transition ${
+              darkMode
+                ? "bg-gray-800 text-white border-white hover:bg-gray-700"
+                : "bg-white text-black border-black hover:bg-gray-100"
+            }`}
+          >
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            onClick={handleLogout}
+            className={`flex items-center gap-2 px-4 py-2 border rounded-lg transition ${
+              darkMode
+                ? "bg-gray-800 text-white border-white hover:bg-gray-700"
+                : "bg-white text-black border-black hover:bg-gray-100"
+            }`}
+          >
+            <LogOut size={18} /> Logout
+          </button>
+        </div>
       </header>
-      <TaskForm onSubmit={addOrUpdateTask} editingTask={editingTask} />
-      <TaskFilter filter={filter} counts={counts} onChange={setFilter} />
+
+      <TaskForm
+        onSubmit={addOrUpdateTask}
+        editingTask={editingTask}
+        darkMode={darkMode}
+      />
+      <TaskFilter
+        filter={filter}
+        counts={counts}
+        onChange={setFilter}
+        darkMode={darkMode}
+      />
       <TaskList
         tasks={visibleTasks}
         onToggle={handleToggle}
         onEdit={handleEdit}
         onDelete={handleDelete}
+        darkMode={darkMode}
       />
     </div>
   );

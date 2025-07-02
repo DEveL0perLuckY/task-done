@@ -14,3 +14,11 @@ export function loadUsername() {
 export function saveUsername(username) {
   localStorage.setItem("username", username);
 }
+
+export function loadDarkMode() {
+  return localStorage.getItem("darkMode") === "true";
+}
+
+export function saveDarkMode(value) {
+  localStorage.setItem("darkMode", value);
+}
