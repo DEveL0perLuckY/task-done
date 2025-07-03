@@ -43,7 +43,7 @@ To get the Personal Task Tracker up and running on your local machine, follow th
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/DEveL0perLuckY/task-done.git](https://github.com/DEveL0perLuckY/task-done.git)
+    git clone https://github.com/DEveL0perLuckY/task-done.git
     ```
 
 2.  **Navigate into the project directory:**
@@ -92,45 +92,23 @@ Experience the application live:
 ### 💡 Light Mode
 
 <p align="center">
-  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/light.png?raw=true" width="400" alt="Personal Task Tracker Light Mode Screenshot" />
+  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/light.png?raw=true" width="500" alt="Personal Task Tracker Light Mode Screenshot" />
 </p>
 
 ### 🌙 Dark Mode
 
 <p align="center">
-  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/dark.png?raw=true" width="400" alt="Personal Task Tracker Dark Mode Screenshot" />
+  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/dark.png?raw=true" width="500" alt="Personal Task Tracker Dark Mode Screenshot" />
 </p>
 
 ### 🔐 Login Page
 
 <p align="center">
-  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/login.png?raw=true" width="400" alt="Personal Task Tracker Login Page Screenshot" />
+  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/login.png?raw=true" width="500" alt="Personal Task Tracker Login Page Screenshot" />
 </p>
 
 ---
 
-## 📁 Project Structure
-task-done/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── Login.js
-│   │   ├── TaskForm.js
-│   │   ├── TaskItem.js
-│   │   ├── TaskList.js
-│   │   └── TaskFilter.js
-│   ├── utils/
-│   │   └── localStorage.js
-│   ├── styles/
-│   │   └── App.css
-│   ├── App.js
-│   └── index.js
-├── README.md
-└── package.json
-
-
----
 
 ## 📬 Submission Information
 
