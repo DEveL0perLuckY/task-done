@@ -61,7 +61,7 @@ To get the Personal Task Tracker up and running on your local machine, follow th
 4.  **Start the development server:**
 
     ```bash
-    npm start
+    npm run dev
     ```
 
 5.  **Access the application:**

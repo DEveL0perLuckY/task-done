@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Edit3, Plus } from "lucide-react"; // ⬅️ import icons
 
 export default function TaskForm({ onSubmit, editingTask, darkMode }) {
   const [title, setTitle] = useState("");
@@ -56,7 +57,7 @@ export default function TaskForm({ onSubmit, editingTask, darkMode }) {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-6">
       <div className="grid grid-cols-3 grid-rows-2 gap-4">
-        <div className="col-span-4 flex">
+        <div className="col-span-4 flex gap-4">
           <input
             type="text"
             placeholder="Task title"
@@ -65,6 +66,9 @@ export default function TaskForm({ onSubmit, editingTask, darkMode }) {
             required
             className={inputStyles}
           />
+          <button type="submit" className={buttonStyles}>
+            {editingTask ? <Edit3 size={20} /> : <Plus size={20} />}
+          </button>
         </div>
         <div className="col-span-5 col-start-1 row-start-2 flex">
           <textarea
@@ -73,11 +77,6 @@ export default function TaskForm({ onSubmit, editingTask, darkMode }) {
             onChange={(e) => setDescription(e.target.value)}
             className={inputStyles}
           />
-        </div>
-        <div className="col-start-5 row-start-1 flex">
-          <button type="submit" className={buttonStyles}>
-            {editingTask ? "Update Task" : "Add Task"}
-          </button>
         </div>
       </div>
 
