@@ -1,113 +1,116 @@
 # 📝 Personal Task Tracker
 
-A minimal and responsive personal task management app built with **React.js**, designed as part of the Intern Pre-Hire Assignment. Manage your tasks with ease using intuitive filters, priorities, due dates, and tags — all stored locally in your browser.
+A minimal and responsive personal task management application built with **React.js**. This project was developed as part of an Intern Pre-Hire Assignment. It allows users to efficiently manage tasks with intuitive filters, priority settings, due dates, and custom tags, with all data stored locally in the browser.
 
 ---
 
-## 📖 Description
+## 📖 Overview
 
-This application helps users keep track of their personal tasks. After a simple login, users can add, edit, delete, and filter tasks by status. Bonus features include search, priority levels, due dates, categories/tags, animations, and dark mode. All data is saved using `localStorage` for persistence.
+This application provides a comprehensive solution for personal task management. Users can easily log in and perform **CRUD (Create, Read, Update, Delete)** operations on tasks. Key functionalities include filtering tasks by status, searching by title or tag, setting priority levels, assigning due dates, and organizing tasks with categories/tags. The application also features smooth animations and a dark mode toggle for an enhanced user experience. All task data is persistently saved using `localStorage`.
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-### ✅ Core Features
+### Core Functionality
 
-- 🔐 Simple login using username (stored in `localStorage`)
-- ➕ Add task (title required, description optional)
-- ✏️ Edit existing tasks
-- ❌ Delete task with confirmation
-- ✅ Mark task as completed or pending
-- 📄 Display creation time and status
-- 🔍 Filter tasks: All, Completed, Pending
-- 💾 Persistent storage using `localStorage`
+* **User Authentication**: Simple login using a username, saved in `localStorage`.
+* **Task Management**:
+    * Add new tasks (title required, description optional).
+    * Edit existing task details.
+    * Delete tasks with a confirmation prompt.
+    * Mark tasks as **completed** or **pending**.
+    * Display task creation time and current status.
+* **Task Filtering**: Filter tasks by **All**, **Completed**, or **Pending** status.
+* **Data Persistence**: All task data is saved locally using `localStorage`.
 
-### 🌟 Bonus Features Implemented
+### Enhanced Features
 
-- 🔎 Search tasks by title or tag
-- ⚙️ Task priority: Low, Medium, High
-- 🗓 Set due dates
-- 🎨 Smooth animations/transitions
-- 🌙 Dark mode toggle
-- 🏷 Task tags/categories (comma-separated)
+* **Search**: Quickly find tasks by **title** or **tag**.
+* **Priority Levels**: Assign **Low**, **Medium**, or **High** priority to tasks.
+* **Due Dates**: Set specific due dates for tasks.
+* **User Interface**:
+    * Smooth animations and transitions for an improved user experience.
+    * **Dark Mode** toggle for personalized viewing.
+* **Tags/Categories**: Organize tasks using comma-separated tags or categories.
 
 ---
 
 ## 🛠 Setup Instructions
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/personal-task-tracker.git
-   ```
+To get the Personal Task Tracker up and running on your local machine, follow these steps:
 
-````
+1.  **Clone the repository:**
 
-2. Navigate into the project folder:
+    ```bash
+    git clone [https://github.com/DEveL0perLuckY/task-done.git](https://github.com/DEveL0perLuckY/task-done.git)
+    ```
 
-   ```bash
-   cd personal-task-tracker
-   ```
+2.  **Navigate into the project directory:**
 
-3. Install dependencies:
+    ```bash
+    cd task-done
+    ```
 
-   ```bash
-   npm install
-   ```
+3.  **Install dependencies:**
 
-4. Start the development server:
+    ```bash
+    npm install
+    ```
 
-   ```bash
-   npm start
-   ```
+4.  **Start the development server:**
 
-5. Open your browser at:
-   [http://localhost:5173](http://localhost:5173)
+    ```bash
+    npm start
+    ```
+
+5.  **Access the application:**
+
+    Open your web browser and go to `http://localhost:5173`.
 
 ---
 
-## 🧰 Technologies Used
+## 🚀 Technologies Used
 
-* React.js
-* Tailwind CSS (via utility classes)
-* Lucide-react (icon library)
-* LocalStorage API (for data persistence)
+* **React.js**: A JavaScript library for building user interfaces.
+* **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+* **Lucide-react**: A collection of open-source icons for React.
+* **LocalStorage API**: For client-side data persistence.
 
 ---
 
 ## 🔗 Live Demo
 
+Experience the application live:
+
 👉 [https://task.developerlucky.in/](https://task.developerlucky.in/)
 
 ---
 
-## 🖼 Screenshots
+## 📸 Screenshots
 
 ### 💡 Light Mode
 
 <p align="center">
-  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/light.png?raw=true" width="250" alt="Task App Screenshot" />
+  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/light.png?raw=true" width="400" alt="Personal Task Tracker Light Mode Screenshot" />
 </p>
-
 
 ### 🌙 Dark Mode
+
 <p align="center">
-  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/dark.png?raw=true" width="250" alt="Task App Screenshot" />
+  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/dark.png?raw=true" width="400" alt="Personal Task Tracker Dark Mode Screenshot" />
 </p>
 
+### 🔐 Login Page
 
-### 🌙 Login Page
 <p align="center">
-  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/login.png?raw=true" width="250" alt="Task App Screenshot" />
+  <img src="https://github.com/DEveL0perLuckY/task-done/blob/main/login.png?raw=true" width="400" alt="Personal Task Tracker Login Page Screenshot" />
 </p>
-
 
 ---
 
-## 📁 Folder Structure
-
-```
-task-tracker/
+## 📁 Project Structure
+task-done/
 ├── public/
 │   └── index.html
 ├── src/
@@ -125,30 +128,13 @@ task-tracker/
 │   └── index.js
 ├── README.md
 └── package.json
-```
+
 
 ---
 
-## 📬 Submission Info
+## 📬 Submission Information
 
-* **GitHub Repository**: [https://github.com/your-username/personal-task-tracker](https://github.com/your-username/personal-task-tracker)
-* **Live Demo**: [https://your-live-demo-url.netlify.app](https://your-live-demo-url.netlify.app)
-
----
-
-## 🤝 Acknowledgments
-
-Built with ❤️ as part of a React internship pre-hire assignment. Focused on component structure, UI/UX, and feature completeness.
-
-```
+* **GitHub Repository**: [https://github.com/DEveL0perLuckY/task-done](https://github.com/DEveL0perLuckY/task-done)
+* **Live Demo**: [https://task.developerlucky.in](https://task.developerlucky.in)
 
 ---
-
-Let me know if you want help with:
-- deploying to **Netlify/Vercel**
-- optimizing **screenshots**
-- customizing with your **GitHub username or live link**.
-
-You're ready to submit — great work! ✅
-```
-````
