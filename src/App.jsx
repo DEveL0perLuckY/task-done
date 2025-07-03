@@ -86,7 +86,7 @@ function App() {
     return matchesFilter && matchesSearch;
   });
 
-  if (!username) return <Login onLogin={handleLogin} />;
+  if (!username) return <Login onLogin={handleLogin} darkMode={darkMode} />;
 
   return (
     <div
